@@ -17,12 +17,12 @@ const eNumero = (numero) => /^[0-9]+$/.test(numero);
 const cepValido = (cep) => cep.length == 8 && eNumero(cep);
 
 //funcao para preencher campos relacionados ao CEP 
-const preencherFormulario = (endereco) => {
+const preencherFormulario = (endereco) =>{
     document.getElementById('Rua').value = endereco.logradouro;
 //coloca o valor de logradouro da API dentro do campo logradouro do formulario
     document.getElementById('Bairro').value = endereco.bairro;
 
-    document.getElementById('Cidade').value = endereco.Cidade;
+    document.getElementById('Cidade').value = endereco.localidade;
 
     document.getElementById('Estado').value = endereco.uf;
    
