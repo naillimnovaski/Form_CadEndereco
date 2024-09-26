@@ -48,7 +48,7 @@ Descrição: O Bootstrap foi utilizado para facilitar a estilização do formul�
  
 ## Autores
  
+- [Naillim Novaski](https://github.com/naillimnovaski)
 - [Murilo Tonassi](https://github.com/murilo-tonassi)
 - [Nicolas Tonassi](https://github.com/nicolas-tonassi)
 - [Pamela Souza](https://github.com/PamelaSouzaSilva)
-- [Naillim Novaski](https://github.com/naillimnovaski)
