@@ -2,6 +2,8 @@
  
 ## introdução
 Este projeto é um sistema de cadastro de endereços desenvolvido com HTML, CSS, JavaScript e Bootstrap. A principal funcionalidade do sistema é preencher automaticamente os campos de endereço com base no CEP informado, utilizando a API do ViaCEP para realizar essa consulta. O sistema também permite limpar os campos do formulário e validar o CEP inserido. O uso do Bootstrap garante um layout responsivo e organizado, facilitando a experiência do usuário.
+
+<img src="img/gifcep.gif">
  
 ## Funcionalidades
  
@@ -68,6 +70,19 @@ Descrição: O site ViaCEP é uma API gratuita que permite consultar informaçõ
 - [Bootstrap](https://getbootstrap.com/):
  
 Descrição: O Bootstrap foi utilizado para facilitar a estilização do formulário HTML. Ele forneceu componentes CSS prontos e responsivos o que torna o design mais adaptável a diferentes dispositivos. Em nosso projeto, o Bootstrap foi usado para criar e estilizar o layout do formulário de cadastro de endereço sem a necessidade de estilização manual.
+
+- [W3 schools](https://www.w3schools.com/jsref/met_form_reset.asp)
+ 
+ limparFormulario():
+ 
+ A função que limpa os campos de um formulário pode ser encontrada explicada no site W3Schools. Ele ensina como usar o método reset() para limpar todos os campos de um formulário de uma vez. Além disso, a função que  criamos para limpar manualmente cada campo também é abordada com exemplos de manipulação de elementos individuais.
+ 
+ 
+ - [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
+  Validação de CEP (cepValido()):
+ 
+ Nesse site possui vários exemplos de como validar um CEP corretamente. O uso de uma função para garantir que o CEP tenha 8 dígitos é uma prática comum, e esse artigo aborda diferentes métodos para essa validação.
  
  
  
