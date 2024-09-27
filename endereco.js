@@ -1,53 +1,50 @@
-'use strict' // ativa o modo retritor 
-//codigo de consumo de API da ViaCEP
-//https;//viacep.com.br/
-
-//limpar consulta do form ja realizada
-const limparFormulario =() => {
-
-    document.getElementById ("Rua").value = ' '; 
-    document.getElementById ("Rairro").value = ' ';
-    document.getElementById ("Cidade").value = ' ';
-    document.getElementById ("Estado").value = ' ';
+'use strict'; //Ativa o modo restrito
+// Código para consumo de API da ViaCEP
+// https://viacep.com.br/
+ 
+ 
+// Limpar consulta do form já realizada
+const limparFormulario = () =>{
+ 
+    document.getElementById('logradouro').value = '';
+    document.getElementById('bairro').value = '';
+    document.getElementById('localidade').value = '';
+    document.getElementById('uf').value = '';
+ 
+ 
 }
-
-//verifica se o cep e valido, texta o q e numero e o q nao
+ 
+// Verifica se o CEP é válido
 const eNumero = (numero) => /^[0-9]+$/.test(numero);
-//verifica o tamanho do CEP, verifica c e igual a 8 digitos
+// Verifica o tamanho do CEP
 const cepValido = (cep) => cep.length == 8 && eNumero(cep);
-
-//funcao para preencher campos relacionados ao CEP 
+ 
+// Função para preencher campos relacionados ao CEP
 const preencherFormulario = (endereco) =>{
-    document.getElementById('Rua').value = endereco.logradouro;
-//coloca o valor de logradouro da API dentro do campo logradouro do formulario
-    document.getElementById('Bairro').value = endereco.bairro;
-
-    document.getElementById('Cidade').value = endereco.localidade;
-
-    document.getElementById('Estado').value = endereco.uf;
-   
+    document.getElementById('logradouro').value = endereco.logradouro;
+    document.getElementById('bairro').value = endereco.bairro;
+    document.getElementById('localidade').value = endereco.localidade;
+    document.getElementById('uf').value = endereco.uf;
 }
-//funçao para consumo de API ViaCEP  
-const pesquisarCep = async () => {
+ 
+// Função para consumo de API ViaCEP
+const pesquisarCep = async() => {
     limparFormulario();
-    const url = `https://viacep.com.br/ws/${cep.value}/json/`;
+    const url = `http://viacep.com.br/ws/${cep.value}/json/`;
     if(cepValido(cep.value)){
         const dados = await fetch(url);
         const addres = await dados.json();
-    
+ 
         if(addres.hasOwnProperty()){
-            alert('CEP nao encontrado');
+            alert('CEP não encontrado');
+       
         }else{
             preencherFormulario(addres);
         }
     }else{
-        alert('CEP incorreto')
- 
-
-    } 
+        alert('CEP Incorreto');
+    }
 }
-
-// executa a acao de preenchimento do formulario ao deixar o campo CEP
-document.getElementById('CEP').addEventListener('focusout',pesquisarcep);
-
-
+ 
+// Executa a ação de preenchimento do formulário ao deixar o campo do CEP
+document.getElementById('cep').addEventListener('focusout' , pesquisarCep);
